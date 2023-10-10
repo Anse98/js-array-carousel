@@ -1,3 +1,5 @@
+// CAROSELLO
+
 //Creo un array di immagini
 const images = [
   "img/01.webp",
@@ -6,6 +8,7 @@ const images = [
   "img/04.webp",
   "img/05.webp"
 ];
+
 //creo una variabile che mi prende l'elemnto con la classe container dal DOM
 const containerImg = document.querySelector(".container");
 
@@ -20,7 +23,7 @@ for (let i = 0; i < images.length; i++) {
   <div class="image">
   <img src ="${currentImg}">
   </div>
-   ` 
+   `
 
   // Vado ad inserire nel container la variabile che contiene la stringa
   containerImg.innerHTML += htmlString;
@@ -32,3 +35,48 @@ const imageElements = document.querySelectorAll(".image");
 //Creo una variabile che mi prende il primo elemento che ha la classe image
 const firstImageElement = imageElements[0];
 firstImageElement.classList.add("active");
+
+
+// EVENTO AL CLICK DELLE FRECCE
+
+// tengo traccia con una variabile a che foto sono
+let actual = 0;
+
+// FRECCIA GIU
+
+function changeActDown() {
+
+  // Rimuovo la classe active dall'elemento
+  imageElements[actual].classList.remove("active");
+
+  // SE non ci sono piu immagini da displayare allora ritorna alla prima
+  if (actual === (imageElements.length - 1)) {
+    actual = 0;
+
+  // ALTRIMENTI passa alla foto successiva
+  } else {
+    actual += 1;
+  }
+
+  imageElements[actual].classList.add("active");
+}
+
+
+//FRECCIA SU
+
+function changeActUp () {
+
+  //Rimuovo la classe active dall'elemento
+  imageElements[actual].classList.remove("active");
+
+  // SE sei alla prima foto allora passa all'ultima
+  if (actual === 0) {
+    actual = imageElements.length - 1;
+
+  // ALTRIMENTI passa alla foto precedente
+  } else {
+    actual -= 1;
+  }
+  
+  imageElements[actual].classList.add("active");
+}
