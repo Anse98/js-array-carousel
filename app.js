@@ -42,6 +42,7 @@ firstImageElement.classList.add("active");
 // tengo traccia con una variabile a che foto sono
 let actual = 0;
 
+
 // FRECCIA GIU
 
 function changeActDown() {
@@ -49,7 +50,7 @@ function changeActDown() {
   // Rimuovo la classe active dall'elemento
   imageElements[actual].classList.remove("active");
 
-  // SE non ci sono piu immagini da displayare allora ritorna alla prima
+  // SE la foto è l'ultima allora ritorna alla prima
   if (actual === (imageElements.length - 1)) {
     actual = 0;
 

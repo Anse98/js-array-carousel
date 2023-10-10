@@ -23,7 +23,7 @@
 
     - Rimuovo la classe active dall'elemento
 
-    - SE non ci sono piu immagini da displayare allora ritorna alla prima
+    - SE la foto è l'ultima allora ritorna alla prima
 
     - ALTRIMENTI passa alla foto successiva
 

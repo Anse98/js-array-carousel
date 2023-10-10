@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 img {
   width: 100%;
 }
@@ -18,8 +25,6 @@ img {
 
 .container {
   max-width: 600px;
-  margin:0 auto;
-  margin-top: 50px;
   position: relative;
 }
 
@@ -27,19 +32,26 @@ img {
 .arrow-down {
   border: solid 1px transparent;
   display: inline-block;
-  border-radius: 999px;
-  padding: 6px;
-  background-color: lightgrey;
+  border-radius: 50%;
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: lightgray;
   position: absolute;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
 .arrow-up {
   top: 10px;
   left: 50%;
+  transform:translate(-50%, 0);
 }
 
 .arrow-down {
   bottom: 10px;
   left: 50%;
+  transform:translate(-50%, 0);
 }
