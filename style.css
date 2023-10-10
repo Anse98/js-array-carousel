@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 600px;
+  margin:0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.arrow-up, 
+.arrow-down {
+  border: solid 1px transparent;
+  display: inline-block;
+  border-radius: 999px;
+  padding: 6px;
+  background-color: lightgrey;
+  position: absolute;
+  cursor: pointer;
+}
+
+.arrow-up {
+  top: 10px;
+  left: 50%;
+}
+
+.arrow-down {
+  bottom: 10px;
+  left: 50%;
+}
