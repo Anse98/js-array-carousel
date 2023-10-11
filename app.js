@@ -65,7 +65,7 @@ function changeActDown() {
 
   // ALTRIMENTI passa alla foto successiva
   } else {
-    actual += 1;
+    actual ++;
   }
 
   imageElements[actual].classList.add("active");
@@ -88,7 +88,7 @@ function changeActUp () {
 
   // ALTRIMENTI passa alla foto precedente
   } else {
-    actual -= 1;
+    actual --;
   }
   
   imageElements[actual].classList.add("active");
