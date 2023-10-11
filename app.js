@@ -32,9 +32,17 @@ for (let i = 0; i < images.length; i++) {
 // Creo una variabile che mi prende tutti gli elementi con la classe image
 const imageElements = document.querySelectorAll(".image");
 
+// Creo una variabile che mi prende tutti gli elementi con la classe thumb-img
+const thumbImages = document.querySelectorAll(".thumb-img")
+
+
 //Creo una variabile che mi prende il primo elemento che ha la classe image
 const firstImageElement = imageElements[0];
 firstImageElement.classList.add("active");
+
+//Creo una variabile che mi prende il primo elemento che ha la classe thumb-img
+const firstThumb = thumbImages[0];
+firstThumb.classList.add("thumb-active");
 
 
 // EVENTO AL CLICK DELLE FRECCE
@@ -49,9 +57,10 @@ function changeActDown() {
 
   // Rimuovo la classe active dall'elemento
   imageElements[actual].classList.remove("active");
+  thumbImages[actual].classList.remove("thumb-active");
 
   // SE la foto è l'ultima allora ritorna alla prima
-  if (actual === (imageElements.length - 1)) {
+  if (actual === (imageElements.length - 1) || actual === (thumbImages.length - 1)) {
     actual = 0;
 
   // ALTRIMENTI passa alla foto successiva
@@ -60,6 +69,7 @@ function changeActDown() {
   }
 
   imageElements[actual].classList.add("active");
+  thumbImages[actual].classList.add("thumb-active");
 }
 
 
@@ -69,10 +79,12 @@ function changeActUp () {
 
   //Rimuovo la classe active dall'elemento
   imageElements[actual].classList.remove("active");
+  thumbImages[actual].classList.remove("thumb-active");
 
   // SE sei alla prima foto allora passa all'ultima
   if (actual === 0) {
     actual = imageElements.length - 1;
+    actual = thumbImages.length - 1;
 
   // ALTRIMENTI passa alla foto precedente
   } else {
@@ -80,4 +92,5 @@ function changeActUp () {
   }
   
   imageElements[actual].classList.add("active");
+  thumbImages[actual].classList.add("thumb-active");
 }
